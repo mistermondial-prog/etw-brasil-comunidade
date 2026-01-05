@@ -1,136 +1,134 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>ETW Brasil | Comunidade de Fãs</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0f172a;
-      color: #ffffff;
-      text-align: center;
-    }
-    header {
-      background: linear-gradient(90deg, #0ea5e9, #22c55e);
-      padding: 20px;
-    }
-    header h1 {
-      margin: 10px 0 5px;
-    }
-    header p {
-      margin: 0;
-      font-weight: bold;
-    }
-    .container {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .card {
-      background: #020617;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-    h2 {
-      margin-top: 0;
-      color: #38bdf8;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      text-align: left;
-    }
-    li {
-      padding: 6px 0;
-      border-bottom: 1px solid #1e293b;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
-      background: #22c55e;
-      color: #000;
-      font-weight: bold;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 18px;
-    }
-    .btn:hover {
-      background: #16a34a;
-    }
-    footer {
-      margin-top: 30px;
-      font-size: 14px;
-      opacity: 0.8;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>ETW Brasil | Comunidade de Fãs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0f1a;
+  color: #fff;
+}
+
+header {
+  background: url("assets/capa.png") center/cover no-repeat;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+header img {
+  width: 120px;
+}
+
+header h1 {
+  margin: 15px 0 10px;
+  font-size: 36px;
+}
+
+header p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.cta {
+  margin-top: 25px;
+}
+
+.cta a {
+  background: #22c55e;
+  color: #000;
+  padding: 16px 36px;
+  font-size: 20px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+.section h2 {
+  color: #38bdf8;
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #020617;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.creator {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.creator img {
+  width: 180px;
+  border-radius: 20px;
+  border: 3px solid #22c55e;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #020617;
+  font-size: 14px;
+  opacity: 0.8;
+}
+</style>
 </head>
 
 <body>
 
 <header>
+  <img src="assets/logo.png" alt="ETW Brasil">
   <h1>ETW Brasil</h1>
-  <p>Comunidade de Fãs • Respeito vem primeiro</p>
+  <p>Comunidade de Fãs de Eat the World</p>
+
+  <div class="cta">
+    <a href="https://www.roblox.com/share/g/263736733" target="_blank">
+      🔰 ENTRAR NA COMUNIDADE
+    </a>
+  </div>
 </header>
 
-<div class="container">
-
-  <div class="card">
-    <h2>🏆 Ranking da Comunidade – Exibição Oficial</h2>
-    <p>🎯 TOP DA COMUNIDADE (20M a 80M)</p>
-    <ul>
-      <li>🥇 Mr.Mondial — 22.400.000</li>
-      <li>🥈 AURA — 13.000.000</li>
-      <li>🥉 TOP 3 — Vaga em aberto</li>
-    </ul>
+<section class="section">
+  <h2>🎮 O que é a ETW Brasil?</h2>
+  <div class="cards">
+    <div class="card">🏆 Ranking oficial da comunidade</div>
+    <div class="card">🔰 Sistema de patentes</div>
+    <div class="card">🗨️ Fóruns de bate-papo</div>
+    <div class="card">🐞 Report de bugs</div>
+    <div class="card">⚔️ Eventos e duelos</div>
+    <div class="card">🤝 Ajuda comunitária para concluir eventos</div>
   </div>
+</section>
 
-  <div class="card">
-    <h2>🏆 Elite (10M a 19M)</h2>
-    <ul>
-      <li>Vaga em aberto</li>
-    </ul>
+<section class="section">
+  <h2>👑 Criador da Comunidade</h2>
+  <div class="creator">
+    <img src="assets/mr-mondial.png" alt="Mr.Mondial">
+    <div>
+      <h3>Mr.Mondial</h3>
+      <p>Criador da ETW Brasil e organizador da comunidade. Responsável pelos eventos, patentes e estrutura geral.</p>
+    </div>
   </div>
-
-  <div class="card">
-    <h2>🔰 Avançado (1M a 9M)</h2>
-    <ul>
-      <li>MEGAPOOP — 6.800.000</li>
-      <li>Rashford — 5.000.000</li>
-      <li>PrincesaPerola95 — 5.008.600</li>
-      <li>MsLetis — 3.200.000</li>
-      <li>Dark_OSF — 3.000.000</li>
-      <li>Mutley — 3.000.000</li>
-      <li>Lord_Samurayy — 1.400.000</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>🔷 Intermediário (100K a 900K)</h2>
-    <ul>
-      <li>POOOP — 505.000</li>
-      <li>ANNA — 148.000</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>🔸 Iniciante (10K a 100K)</h2>
-    <ul>
-      <li>RAFALEGAMES205 — 86.100</li>
-      <li>H_H — 34.000</li>
-      <li>Danttas — 21.000</li>
-      <li>il0l0li — 17.100</li>
-    </ul>
-  </div>
-
-  <a class="btn" href="https://www.roblox.com/share/g/263736733" target="_blank">
-    🔰 Entrar na Comunidade ETW Brasil
-  </a>
-
-</div>
+</section>
 
 <footer>
   © ETW Brasil • Comunidade de Fãs
