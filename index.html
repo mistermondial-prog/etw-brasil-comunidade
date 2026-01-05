@@ -11,21 +11,21 @@ body {
   font-family: "Segoe UI", Arial, Helvetica, sans-serif;
   background: #0b0f1a;
   color: #ffffff;
+  text-align: center;
 }
 
 /* ===== HEADER ===== */
 header {
-  background: url("assets/capa.png") center/cover no-repeat;
+  background: url("assets/capa-desktop.png") center/cover no-repeat;
   padding: 90px 20px;
   position: relative;
-  text-align: center;
 }
 
 header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0,0,0,0.65);
 }
 
 .header-content {
@@ -35,15 +35,15 @@ header::before {
 }
 
 header img {
-  width: 120px;
+  width: 110px;
   margin-bottom: 15px;
 }
 
 header h1 {
-  font-size: 42px;
+  font-size: 40px;
   margin: 10px 0;
-  letter-spacing: 2px;
   font-weight: 800;
+  letter-spacing: 2px;
 }
 
 header p {
@@ -57,19 +57,16 @@ header p {
 }
 
 .cta a {
+  display: inline-block;
   background: #22c55e;
   color: #000;
-  padding: 16px 38px;
+  padding: 16px 32px;
   font-size: 20px;
   border-radius: 40px;
   text-decoration: none;
   font-weight: bold;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.cta a:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(34,197,94,0.6);
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* ===== SEÇÕES ===== */
@@ -81,8 +78,7 @@ header p {
 
 .section h2 {
   color: #38bdf8;
-  margin-bottom: 25px;
-  text-align: center;
+  margin-bottom: 30px;
 }
 
 /* ===== CARDS ===== */
@@ -94,8 +90,8 @@ header p {
 }
 
 .card h3 {
-  margin-top: 0;
   color: #22c55e;
+  margin-top: 0;
 }
 
 .card p {
@@ -105,9 +101,9 @@ header p {
 /* ===== CRIADOR ===== */
 .creator {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .creator img {
@@ -116,17 +112,33 @@ header p {
   border: 4px solid #22c55e;
 }
 
-.creator h3 {
-  margin: 0 0 10px;
-}
-
 /* ===== FOOTER ===== */
 footer {
-  text-align: center;
-  padding: 30px;
   background: #020617;
+  padding: 30px;
   font-size: 14px;
   opacity: 0.8;
+}
+
+/* ===== MOBILE AJUSTES ===== */
+@media (max-width: 768px) {
+  header {
+    background: url("assets/capa-mobile.png") center/cover no-repeat;
+    padding: 120px 20px;
+  }
+
+  header h1 {
+    font-size: 32px;
+  }
+
+  header p {
+    font-size: 16px;
+  }
+
+  .cta a {
+    width: 100%;
+    font-size: 18px;
+  }
 }
 </style>
 </head>
@@ -192,10 +204,8 @@ footer {
   <h2>👑 Criador da Comunidade</h2>
   <div class="card creator">
     <img src="assets/mr-mondial.png" alt="Mr.Mondial">
-    <div>
-      <h3>Mr.Mondial</h3>
-      <p>Criador da ETW Brasil, responsável pela direção, organização e evolução da comunidade.</p>
-    </div>
+    <h3>Mr.Mondial</h3>
+    <p>Criador da ETW Brasil, responsável pela direção, organização e evolução da comunidade.</p>
   </div>
 </section>
 
