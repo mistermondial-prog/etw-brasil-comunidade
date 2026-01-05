@@ -8,24 +8,42 @@
 <style>
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
   background: #0b0f1a;
-  color: #fff;
+  color: #ffffff;
 }
 
+/* ===== HEADER ===== */
 header {
   background: url("assets/capa.png") center/cover no-repeat;
-  padding: 60px 20px;
+  padding: 90px 20px;
+  position: relative;
   text-align: center;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.header-content {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
 }
 
 header img {
   width: 120px;
+  margin-bottom: 15px;
 }
 
 header h1 {
-  margin: 15px 0 10px;
-  font-size: 36px;
+  font-size: 42px;
+  margin: 10px 0;
+  letter-spacing: 2px;
+  font-weight: 800;
 }
 
 header p {
@@ -33,20 +51,28 @@ header p {
   opacity: 0.9;
 }
 
+/* ===== BOTÃO ===== */
 .cta {
-  margin-top: 25px;
+  margin-top: 30px;
 }
 
 .cta a {
   background: #22c55e;
   color: #000;
-  padding: 16px 36px;
+  padding: 16px 38px;
   font-size: 20px;
   border-radius: 40px;
   text-decoration: none;
   font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.cta a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(34,197,94,0.6);
+}
+
+/* ===== SEÇÕES ===== */
 .section {
   max-width: 1100px;
   margin: auto;
@@ -55,21 +81,28 @@ header p {
 
 .section h2 {
   color: #38bdf8;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
+/* ===== CARDS ===== */
 .card {
   background: #020617;
-  padding: 20px;
-  border-radius: 14px;
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 25px;
 }
 
+.card h3 {
+  margin-top: 0;
+  color: #22c55e;
+}
+
+.card p {
+  margin: 6px 0;
+}
+
+/* ===== CRIADOR ===== */
 .creator {
   display: flex;
   align-items: center;
@@ -78,11 +111,16 @@ header p {
 }
 
 .creator img {
-  width: 180px;
+  width: 200px;
   border-radius: 20px;
-  border: 3px solid #22c55e;
+  border: 4px solid #22c55e;
 }
 
+.creator h3 {
+  margin: 0 0 10px;
+}
+
+/* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 30px;
@@ -96,36 +134,67 @@ footer {
 <body>
 
 <header>
-  <img src="assets/logo.png" alt="ETW Brasil">
-  <h1>ETW Brasil</h1>
-  <p>Comunidade de Fãs de Eat the World</p>
+  <div class="header-content">
+    <img src="assets/logo.png" alt="ETW Brasil">
+    <h1>ETW Brasil</h1>
+    <p>Comunidade de Fãs de Eat the World</p>
 
-  <div class="cta">
-    <a href="https://www.roblox.com/share/g/263736733" target="_blank">
-      🔰 ENTRAR NA COMUNIDADE
-    </a>
+    <div class="cta">
+      <a href="https://www.roblox.com/share/g/263736733" target="_blank">
+        🔰 ENTRAR NA COMUNIDADE
+      </a>
+    </div>
   </div>
 </header>
 
 <section class="section">
-  <h2>🎮 O que é a ETW Brasil?</h2>
-  <div class="cards">
-    <div class="card">🏆 Ranking oficial da comunidade</div>
-    <div class="card">🔰 Sistema de patentes</div>
-    <div class="card">🗨️ Fóruns de bate-papo</div>
-    <div class="card">🐞 Report de bugs</div>
-    <div class="card">⚔️ Eventos e duelos</div>
-    <div class="card">🤝 Ajuda comunitária para concluir eventos</div>
+  <h2>🏆 Ranking Oficial da Comunidade</h2>
+
+  <div class="card">
+    <h3>🎯 Top da Comunidade (20M a 80M)</h3>
+    <p>🥇 Mr.Mondial — 22.400.000</p>
+    <p>🥈 AURA — 13.000.000</p>
+    <p>🥉 Vaga em aberto</p>
+  </div>
+
+  <div class="card">
+    <h3>🏆 Elite (10M a 19M)</h3>
+    <p>Vaga em aberto</p>
+  </div>
+
+  <div class="card">
+    <h3>🔰 Avançado (1M a 9M)</h3>
+    <p>MEGAPOOP — 6.800.000</p>
+    <p>Rashford — 5.000.000</p>
+    <p>PrincesaPerola95 — 5.008.600</p>
+    <p>MsLetis — 3.200.000</p>
+    <p>Dark_OSF — 3.000.000</p>
+    <p>Mutley — 3.000.000</p>
+    <p>Lord_Samurayy — 1.400.000</p>
+  </div>
+
+  <div class="card">
+    <h3>🔷 Intermediário (100K a 900K)</h3>
+    <p>POOOP — 505.000</p>
+    <p>ANNA — 148.000</p>
+  </div>
+
+  <div class="card">
+    <h3>🔸 Iniciante (10K a 100K)</h3>
+    <p>RAFALEGAMES205 — 86.100</p>
+    <p>H_H — 34.000</p>
+    <p>Danttas — 21.000</p>
+    <p>il0l0li — 17.100</p>
   </div>
 </section>
 
 <section class="section">
   <h2>👑 Criador da Comunidade</h2>
-  <div class="creator">
+  <div class="card creator">
     <img src="assets/mr-mondial.png" alt="Mr.Mondial">
     <div>
       <h3>Mr.Mondial</h3>
-      <p>Criador da ETW Brasil e organizador da comunidade. Responsável pelos eventos, patentes e estrutura geral.</p>
+      <p>Criador da ETW Brasil, responsável pela direção, organização e evolução da comunidade.</p>
     </div>
   </div>
 </section>
