@@ -169,18 +169,21 @@ header p {
 /* ===== SEÇÕES ===== */
 .section {
   max-width: 1100px;
-  margin: auto;
+  margin: 80px auto;
   padding: 80px 20px;
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(15px);
   border-radius: 20px;
   box-shadow: 0 0 25px rgba(56,189,248,0.2);
+  text-align: center;
 }
 .section h2 {
   color: var(--accent-blue);
-  margin-bottom: 40px;
-  font-size: 30px;
+  margin-bottom: 60px;
+  font-size: 36px;
   text-shadow: 0 0 20px rgba(56,189,248,0.5);
+  display: block;
+  text-align: center;
 }
 
 /* ===== CARDS ===== */
@@ -190,8 +193,10 @@ header p {
   border-radius: 20px;
   border: 1px solid rgba(255,255,255,0.1);
   padding: 30px;
-  margin-bottom: 30px;
+  margin: 0 auto 30px;
+  max-width: 600px;
   transition: all 0.3s ease;
+  text-align: left;
 }
 .card:hover {
   transform: translateY(-6px);
@@ -220,6 +225,7 @@ footer {
   header h1 { font-size: 36px; }
   .cta a { font-size: 18px; width: 100%; }
   .creator p { font-size: 14px; padding: 0 10px; }
+  .section h2 { font-size: 28px; }
 }
 </style>
 </head>
@@ -250,7 +256,7 @@ footer {
       <p>Criador da ETW Brasil, responsável pela direção, organização e evolução da comunidade.</p>
     </div>
   </header>
-
+  
   <section class="section">
     <h2>🏆 Ranking Oficial da Comunidade</h2>
 
