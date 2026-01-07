@@ -2,48 +2,67 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>ETW Brasil | Comunidade de Fãs</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title>ETW Brasil | Comunidade de Fãs</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-body {
+:root {
+  --bg-dark: #05060f;
+  --accent-green: #22c55e;
+  --accent-blue: #38bdf8;
+  --glass: rgba(255, 255, 255, 0.1);
+  --text-light: #f9fafb;
+  --shadow-glow: 0 0 30px rgba(56,189,248,0.4);
+}
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-  background: #0b0f1a;
-  color: #ffffff;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at 20% 20%, #0b1220, #01030a 70%);
+  color: var(--text-light);
   text-align: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ===== PARTICLE BACKGROUND ===== */
+canvas#particles {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
 }
 
 /* ===== HEADER ===== */
 header {
-  background: url("assets/capa-desktop.png") center/cover no-repeat;
-  padding: 90px 20px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('assets/capa-desktop.png') center/cover no-repeat;
+  padding: 120px 20px;
   position: relative;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-}
-
-.header-content {
-  position: relative;
-  max-width: 900px;
-  margin: auto;
+  box-shadow: var(--shadow-glow);
+  animation: fadeIn 2s ease;
 }
 
 header img {
-  width: 110px;
-  margin-bottom: 15px;
+  width: 120px;
+  filter: drop-shadow(0 0 15px var(--accent-green));
+  animation: floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 header h1 {
-  font-size: 40px;
-  margin: 10px 0;
-  font-weight: 800;
-  letter-spacing: 2px;
+  font-size: 48px;
+  letter-spacing: 3px;
+  color: var(--accent-blue);
+  text-shadow: 0 0 25px rgba(56,189,248,0.6);
+  margin: 20px 0 10px;
 }
 
 header p {
@@ -51,47 +70,59 @@ header p {
   opacity: 0.9;
 }
 
-/* ===== BOTÃO ===== */
-.cta {
-  margin-top: 30px;
-}
-
 .cta a {
   display: inline-block;
-  background: #22c55e;
+  background: linear-gradient(90deg, var(--accent-green), var(--accent-blue));
   color: #000;
-  padding: 16px 32px;
+  padding: 16px 42px;
   font-size: 20px;
-  border-radius: 40px;
+  border-radius: 50px;
   text-decoration: none;
-  font-weight: bold;
-  max-width: 100%;
-  box-sizing: border-box;
+  font-weight: 700;
+  box-shadow: 0 0 20px rgba(34,197,94,0.5);
+  transition: all 0.3s ease;
+}
+
+.cta a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px rgba(56,189,248,0.8);
 }
 
 /* ===== SEÇÕES ===== */
 .section {
   max-width: 1100px;
   margin: auto;
-  padding: 50px 20px;
+  padding: 80px 20px;
+  animation: fadeInUp 1s ease;
 }
 
 .section h2 {
-  color: #38bdf8;
-  margin-bottom: 30px;
+  color: var(--accent-blue);
+  margin-bottom: 40px;
+  font-size: 30px;
 }
 
 /* ===== CARDS ===== */
 .card {
-  background: #020617;
-  padding: 25px;
-  border-radius: 16px;
-  margin-bottom: 25px;
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow-glow);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 40px rgba(34,197,94,0.6);
 }
 
 .card h3 {
-  color: #22c55e;
-  margin-top: 0;
+  color: var(--accent-green);
+  font-size: 22px;
+  margin-bottom: 10px;
 }
 
 .card p {
@@ -107,9 +138,15 @@ header p {
 }
 
 .creator img {
-  width: 200px;
+  width: 220px;
   border-radius: 20px;
-  border: 4px solid #22c55e;
+  border: 4px solid var(--accent-green);
+  box-shadow: 0 0 30px rgba(34,197,94,0.5);
+  transition: transform 0.5s ease;
+}
+
+.creator img:hover {
+  transform: rotate(-2deg) scale(1.05);
 }
 
 /* ===== FOOTER ===== */
@@ -118,32 +155,38 @@ footer {
   padding: 30px;
   font-size: 14px;
   opacity: 0.8;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 -5px 30px rgba(56,189,248,0.3);
+  animation: glowFooter 3s ease-in-out infinite alternate;
 }
 
-/* ===== MOBILE AJUSTES ===== */
+@keyframes glowFooter {
+  from { text-shadow: 0 0 10px var(--accent-green); }
+  to { text-shadow: 0 0 20px var(--accent-blue); }
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
-  header {
-    background: url("assets/capa-mobile.png") center/cover no-repeat;
-    padding: 120px 20px;
-  }
-
-  header h1 {
-    font-size: 32px;
-  }
-
-  header p {
-    font-size: 16px;
-  }
-
-  .cta a {
-    width: 100%;
-    font-size: 18px;
-  }
+  header h1 { font-size: 36px; }
+  .cta a { font-size: 18px; width: 100%; }
+  .card { margin: 20px 10px; }
 }
 </style>
 </head>
 
 <body>
+<canvas id="particles"></canvas>
 
 <header>
   <div class="header-content">
@@ -152,29 +195,24 @@ footer {
     <p>Comunidade de Fãs de Eat the World</p>
 
     <div class="cta">
-      <a href="https://www.roblox.com/share/g/263736733" target="_blank">
-        🔰 ENTRAR NA COMUNIDADE
-      </a>
+      <a href="https://www.roblox.com/share/g/263736733" target="_blank">🔰 Entrar na Comunidade</a>
     </div>
   </div>
 </header>
 
 <section class="section">
   <h2>🏆 Ranking Oficial da Comunidade</h2>
-
   <div class="card">
     <h3>🎯 Top da Comunidade (20M a 80M)</h3>
     <p>🥇 Mr.Mondial — 22.400.000</p>
     <p>🥈 Vaga em aberto</p>
     <p>🥉 Vaga em aberto</p>
   </div>
-
   <div class="card">
     <h3>🏆 Elite (10M a 19M)</h3>
     <p>AURA — 13.000.000</p>
     <p>MRGORDOZIKA — 12.000.000</p>
   </div>
-
   <div class="card">
     <h3>🔰 Avançado (1M a 9M)</h3>
     <p>MEGAPOOP — 6.800.000</p>
@@ -185,14 +223,12 @@ footer {
     <p>Mutley — 3.000.000</p>
     <p>Lord_Samurayy — 1.400.000</p>
   </div>
-
   <div class="card">
     <h3>🔷 Intermediário (100K a 900K)</h3>
     <p>Magoado77 — 620.000</p>
     <p>POOOP — 505.000</p>
     <p>ANNA — 148.000</p>
   </div>
-
   <div class="card">
     <h3>🔸 Iniciante (10K a 100K)</h3>
     <p>RAFALEGAMES205 — 86.100</p>
@@ -215,5 +251,41 @@ footer {
   © ETW Brasil • Comunidade de Fãs
 </footer>
 
+<script>
+// ===== PARTICLE EFFECT =====
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let particles = [];
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+for (let i = 0; i < 80; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 2 + 1,
+    dx: (Math.random() - 0.5) * 0.5,
+    dy: (Math.random() - 0.5) * 0.5
+  });
+}
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(56,189,248,0.8)';
+    ctx.fill();
+    p.x += p.dx;
+    p.y += p.dy;
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+  });
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
 </body>
 </html>
