@@ -10,7 +10,6 @@
 <meta property="og:description" content="Entre para a comunidade oficial de fãs de Eat the World! 🌍🔥">
 <meta property="og:image" content="https://teusite.com/assets/logo.png">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
@@ -18,37 +17,23 @@
 :root {
   --accent-green: #22c55e;
   --accent-blue: #38bdf8;
-  --text-light: #f9fafb;
   --glass: rgba(255,255,255,0.08);
+  --text-light: #f9fafb;
 }
 
-/* ===== RESET ===== */
+/* RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at 20% 20%, #0b1220, #01030a 70%);
   color: var(--text-light);
+  background: #000;
   overflow-x: hidden;
+  line-height: 1.5;
 }
 
-/* ===== HEADER ===== */
-header {
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  background: linear-gradient(180deg, rgba(0,0,0,0.5), rgba(0,0,0,0.9)), 
-              url('assets/capa-desktop.png') center center / cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  text-align: center;
-}
-
-/* ===== VIDEO BACKGROUND ===== */
-header video {
+/* ===== FUNDO EM VÍDEO ESTÁTICO ===== */
+#background-video {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -56,34 +41,38 @@ header video {
   min-height: 100%;
   width: auto;
   height: auto;
-  z-index: -1;
   transform: translate(-50%, -50%);
-  object-fit: contain;
-  display: none;
+  z-index: -2;
+  object-fit: cover;
   background: #000;
-  filter: brightness(0.6);
+  filter: brightness(0.5);
 }
 
-/* ===== OVERLAY ===== */
-header::before {
+/* ===== OVERLAY SUAVE ===== */
+body::before {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
-  z-index: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+  z-index: -1;
 }
 
-/* ===== HEADER CONTENT ===== */
-.header-content {
+/* ===== CONTEÚDO ===== */
+.main-container {
   position: relative;
-  z-index: 2;
-  max-width: 900px;
-  padding: 40px 20px;
+  z-index: 10;
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* ===== HEADER ===== */
+header {
+  text-align: center;
+  padding: 100px 20px 80px;
 }
 
 header img {
-  width: 130px;
-  margin-bottom: 20px;
+  width: 120px;
   filter: drop-shadow(0 0 15px var(--accent-green));
   animation: floatLogo 4s ease-in-out infinite;
 }
@@ -94,19 +83,16 @@ header img {
 }
 
 header h1 {
-  font-size: 46px;
+  font-size: 48px;
   color: var(--accent-blue);
   text-shadow: 0 0 25px rgba(56,189,248,0.6);
+  margin-top: 20px;
 }
 
 header p {
   font-size: 18px;
   opacity: 0.9;
-  margin-top: 8px;
-}
-
-.cta {
-  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .cta a {
@@ -121,11 +107,7 @@ header p {
   box-shadow: 0 0 20px rgba(34,197,94,0.5);
   transition: all 0.3s ease;
 }
-
-.cta a:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 40px rgba(56,189,248,0.8);
-}
+.cta a:hover { transform: scale(1.1); box-shadow: 0 0 40px rgba(56,189,248,0.8); }
 
 /* ===== SETA ===== */
 .scroll-down {
@@ -141,7 +123,6 @@ header p {
   overflow: hidden;
   position: relative;
 }
-
 .scroll-down::before {
   content: "";
   position: absolute;
@@ -154,7 +135,6 @@ header p {
   animation: arrowMove 1.5s infinite;
   filter: drop-shadow(0 0 10px var(--accent-blue));
 }
-
 @keyframes arrowMove {
   0% { transform: translateY(0) rotate(-45deg); opacity: 1; }
   50% { transform: translateY(10px) rotate(-45deg); opacity: 0.6; }
@@ -163,13 +143,9 @@ header p {
 
 /* ===== CRIADOR ===== */
 .creator {
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  margin-top: 80px;
+  text-align: center;
 }
-
 .creator img {
   width: 220px;
   border-radius: 20px;
@@ -177,33 +153,28 @@ header p {
   box-shadow: 0 0 25px rgba(34,197,94,0.5);
   transition: transform 0.4s ease;
 }
-
 .creator img:hover { transform: scale(1.05) rotate(-2deg); }
-
 .creator h3 { color: var(--accent-green); margin-top: 10px; }
-
 .creator p {
   max-width: 600px;
-  opacity: 0.9;
+  margin: 10px auto;
   font-size: 15px;
-  line-height: 1.5;
-  margin: 0 20px;
+  opacity: 0.9;
 }
 
-/* ===== SEÇÃO ===== */
+/* ===== SEÇÕES ===== */
 .section {
   max-width: 1100px;
   margin: auto;
   padding: 80px 20px;
 }
-
 .section h2 {
   color: var(--accent-blue);
   margin-bottom: 40px;
   font-size: 30px;
 }
 
-/* ===== CARD ===== */
+/* ===== CARDS ===== */
 .card {
   background: var(--glass);
   backdrop-filter: blur(20px);
@@ -213,25 +184,30 @@ header p {
   margin-bottom: 30px;
   transition: all 0.3s ease;
 }
-.card:hover { transform: translateY(-8px); box-shadow: 0 0 40px rgba(34,197,94,0.6); }
-.card h3 { color: var(--accent-green); font-size: 22px; }
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(34,197,94,0.5);
+}
+.card h3 {
+  color: var(--accent-green);
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.card p { margin: 6px 0; }
 
 /* ===== FOOTER ===== */
 footer {
-  background: #020617;
+  background: rgba(0,0,0,0.6);
   padding: 30px;
   font-size: 14px;
-  opacity: 0.8;
+  opacity: 0.9;
   border-top: 1px solid rgba(255,255,255,0.1);
   box-shadow: 0 -5px 30px rgba(56,189,248,0.3);
 }
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
-  header { background: none; }
-  header video { display: block; object-fit: cover; }
-  header img { width: 100px; }
-  header h1 { font-size: 34px; }
+  header h1 { font-size: 36px; }
   .cta a { font-size: 18px; width: 100%; }
   .creator p { font-size: 14px; padding: 0 10px; }
 }
@@ -239,12 +215,15 @@ footer {
 </head>
 
 <body>
-<header>
-  <video autoplay muted loop playsinline>
-    <source src="assets/videomobile.mp4" type="video/mp4">
-  </video>
 
-  <div class="header-content">
+<!-- 🔮 VÍDEO DE FUNDO FIXO -->
+<video id="background-video" autoplay muted loop playsinline>
+  <source src="assets/videomobile.mp4" type="video/mp4">
+</video>
+
+<div class="main-container">
+
+  <header>
     <img src="assets/logo.png" alt="ETW Brasil">
     <h1>ETW Brasil</h1>
     <p>Comunidade de Fãs de Eat the World</p>
@@ -260,17 +239,54 @@ footer {
       <h3>Mr.Mondial</h3>
       <p>Criador da ETW Brasil, responsável pela direção, organização e evolução da comunidade.</p>
     </div>
-  </div>
-</header>
+  </header>
 
-<section class="section">
-  <h2>🏆 Ranking Oficial da Comunidade</h2>
-  <div class="card">
-    <h3>🎯 Top da Comunidade</h3>
-    <p>🥇 Mr.Mondial — 22.400.000</p>
-  </div>
-</section>
+  <section class="section">
+    <h2>🏆 Ranking Oficial da Comunidade</h2>
 
-<footer>© ETW Brasil • Comunidade de Fãs</footer>
+    <div class="card">
+      <h3>🎯 Top da Comunidade (20M a 80M)</h3>
+      <p>🥇 Mr.Mondial — 22.400.000</p>
+      <p>🥈 Vaga em aberto</p>
+      <p>🥉 Vaga em aberto</p>
+    </div>
+
+    <div class="card">
+      <h3>🏆 Elite (10M a 19M)</h3>
+      <p>AURA — 13.000.000</p>
+      <p>MRGORDOZIKA — 12.000.000</p>
+    </div>
+
+    <div class="card">
+      <h3>🔰 Avançado (1M a 9M)</h3>
+      <p>MEGAPOOP — 6.800.000</p>
+      <p>Rashford — 5.000.000</p>
+      <p>PrincesaPerola95 — 5.008.600</p>
+      <p>YSXNTOS — 3.900.000</p>
+      <p>Mutley — 3.400.000</p>
+      <p>MsLetis — 3.200.000</p>
+      <p>Dark_OSF — 3.000.000</p>
+      <p>Lord_Samurayy — 1.400.000</p>
+    </div>
+
+    <div class="card">
+      <h3>🔷 Intermediário (100K a 900K)</h3>
+      <p>Magoado77 — 620.000</p>
+      <p>POOOP — 505.000</p>
+      <p>ANNA — 148.000</p>
+    </div>
+
+    <div class="card">
+      <h3>🔸 Iniciante (10K a 100K)</h3>
+      <p>RAFALEGAMES205 — 86.100</p>
+      <p>H_H — 34.000</p>
+      <p>Danttas — 21.000</p>
+      <p>il0l0li — 17.100</p>
+    </div>
+  </section>
+
+  <footer>© ETW Brasil • Comunidade de Fãs</footer>
+</div>
+
 </body>
 </html>
