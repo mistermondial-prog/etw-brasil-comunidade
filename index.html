@@ -30,20 +30,25 @@ body {
   position: relative;
 }
 
-/* ===== PARTICLE BACKGROUND ===== */
 canvas#particles {
   position: fixed;
   inset: 0;
   z-index: -1;
 }
 
-/* ===== HEADER ===== */
 header {
   background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('assets/capa-desktop.png') center/cover no-repeat;
   padding: 120px 20px;
   position: relative;
   box-shadow: var(--shadow-glow);
   animation: fadeIn 2s ease;
+}
+
+@media (max-width: 768px) {
+  header {
+    background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('assets/capa-mobile.png') center/cover no-repeat;
+    padding: 160px 20px;
+  }
 }
 
 header img {
@@ -88,7 +93,6 @@ header p {
   box-shadow: 0 0 40px rgba(56,189,248,0.8);
 }
 
-/* ===== SEÇÕES ===== */
 .section {
   max-width: 1100px;
   margin: auto;
@@ -102,7 +106,6 @@ header p {
   font-size: 30px;
 }
 
-/* ===== CARDS ===== */
 .card {
   background: var(--glass);
   backdrop-filter: blur(20px);
@@ -129,7 +132,6 @@ header p {
   margin: 6px 0;
 }
 
-/* ===== CRIADOR ===== */
 .creator {
   display: flex;
   flex-direction: column;
@@ -149,7 +151,6 @@ header p {
   transform: rotate(-2deg) scale(1.05);
 }
 
-/* ===== FOOTER ===== */
 footer {
   background: #020617;
   padding: 30px;
@@ -165,7 +166,6 @@ footer {
   to { text-shadow: 0 0 20px var(--accent-blue); }
 }
 
-/* ===== ANIMAÇÕES ===== */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
@@ -176,7 +176,6 @@ footer {
   to { opacity: 1; }
 }
 
-/* ===== MOBILE ===== */
 @media (max-width: 768px) {
   header h1 { font-size: 36px; }
   .cta a { font-size: 18px; width: 100%; }
@@ -252,7 +251,6 @@ footer {
 </footer>
 
 <script>
-// ===== PARTICLE EFFECT =====
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 let particles = [];
