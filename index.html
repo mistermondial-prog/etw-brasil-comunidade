@@ -192,11 +192,14 @@
             box-shadow: 0 0 35px rgba(34,197,94,.7); /* Brilho verde intenso */
         }
 
-        .card h3 {
-            color: var(--accent-green);
-            margin-bottom: 20px;
-            font-size: 26px;
-        }
+.card h3 {
+    color: var(--accent-green);
+    margin-bottom: 20px;
+    font-size: 26px;
+    white-space: nowrap;  /* NÃO quebra linha */
+    text-align: center;   /* CENTRALIZA */
+    overflow: hidden;     /* Segurança */
+}
 
         .card p {
             font-size: 18px;
