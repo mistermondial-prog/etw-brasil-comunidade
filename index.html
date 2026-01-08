@@ -18,16 +18,9 @@
     <!-- === META TAGS SOCIAIS (Open Graph) === -->
     <!-- Essas tags controlam como a página aparece quando compartilhada no WhatsApp, Facebook, Discord etc. -->
     <meta property="og:title" content="ETW Brasil | Comunidade de Fãs">
-    <!-- Título que aparece no compartilhamento social -->
-    
     <meta property="og:description" content="Entre para a comunidade oficial de fãs de Eat the World! 🌍🔥">
-    <!-- Descrição curta que aparece no preview social -->
-    
     <meta property="og:image" content="https://teusite.com/assets/logo.png">
-    <!-- Imagem que aparece no compartilhamento (deve ser 1200x630px idealmente) -->
-    
     <meta property="og:type" content="website">
-    <!-- Tipo de conteúdo para o Open Graph -->
 
     <!-- === GOOGLE FONTS === -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
@@ -35,109 +28,88 @@
 
     <style>
         /* === VARIÁVEIS CSS (ROOT) === */
-        /* Centraliza cores e valores reutilizáveis - facilita manutenção */
         :root {
-            --accent-green: #22c55e;  /* Verde principal da marca */
-            --accent-blue: #38bdf8;   /* Azul principal da marca */
-            --glass: rgba(255,255,255,0.08);  /* Efeito vidro fosco */
-            --text-light: #f9fafb;    /* Cor principal do texto */
+            --accent-green: #22c55e;
+            --accent-blue: #38bdf8;
+            --glass: rgba(255,255,255,0.08);
+            --text-light: #f9fafb;
         }
 
         /* === RESET CSS === */
-        /* Remove margens/paddings padrão do navegador e configura box-sizing */
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* === ESTILOS GERAIS DO BODY === */
         body {
-            font-family: 'Poppins', sans-serif;  /* Fonte principal */
-            color: var(--text-light);           /* Cor do texto */
-            background: #000;                   /* Fundo preto */
-            overflow-x: hidden;                 /* Impede barra horizontal */
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-light);
+            background: #000;
+            overflow-x: hidden;
         }
 
         /* ===== VÍDEO DE FUNDO ===== */
-        /* Vídeo fixo que cobre toda a tela como background */
         #background-video {
-            position: fixed;        /* Fixo na tela (não rola) */
-            inset: 0;               /* Ocupa toda a viewport (top/right/bottom/left = 0) */
+            position: fixed;
+            inset: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;      /* Mantém proporção cobrindo toda área */
-            z-index: -2;            /* Atrás de tudo */
-            filter: brightness(0.55); /* Escurece o vídeo em 45% */
+            object-fit: cover;
+            z-index: -2;
+            filter: brightness(0.55);
         }
 
-        /* Overlay escuro sobre o vídeo para melhorar legibilidade do texto */
         body::before {
-            content: "";                    /* Elemento pseudo vazio */
+            content: "";
             position: fixed;
             inset: 0;
             background: linear-gradient(180deg, rgba(0,0,0,.65), rgba(0,0,0,.95));
-            /* Gradiente de preto mais claro no topo para mais escuro na base */
-            z-index: -1;                    /* Acima do vídeo, abaixo do conteúdo */
+            z-index: -1;
         }
 
-        /* Container principal que garante altura mínima da página */
         .main-container {
-            min-height: 100vh;      /* 100% da altura da viewport */
-            padding-bottom: 80px;   /* Espaço para o footer não sobrepor conteúdo */
+            min-height: 100vh;
+            padding-bottom: 80px;
         }
 
-        /* ===== HEADER (CABECALHO) ===== */
+        /* ===== HEADER ===== */
         header {
-            text-align: center;     /* Centraliza todo conteúdo */
-            padding: 100px 20px 60px; /* Topo 100px, laterais 20px, baixo 60px */
+            text-align: center;
+            padding: 100px 20px 60px;
         }
 
-        /* Logo animada no header */
         header img {
-            width: 180px;
-            filter: drop-shadow(0 0 15px var(--accent-green)); /* Sombra colorida */
-            animation: floatLogo 4s ease-in-out infinite; /* Animação contínua */
+            width: 120px;
+            filter: drop-shadow(0 0 15px var(--accent-green));
+            animation: floatLogo 4s ease-in-out infinite;
         }
 
-        /* Animação de flutuação suave do logo */
         @keyframes floatLogo {
-            50% { transform: translateY(-8px); } /* Move 8px para cima na metade */
+            50% { transform: translateY(-8px); }
         }
 
-        /* Título principal H1 */
         header h1 {
             font-size: 48px;
             color: var(--accent-blue);
-            text-shadow: 0 0 25px rgba(56,189,248,0.6); /* Brilho azul */
+            text-shadow: 0 0 25px rgba(56,189,248,0.6);
         }
 
         header p {
             font-size: 18px;
-            opacity: .9; /* Levemente transparente */
+            opacity: .9;
         }
 
-        /* Botão CTA (Call To Action) */
         .cta a {
             display: inline-block;
             margin-top: 10px;
             background: linear-gradient(90deg, var(--accent-green), var(--accent-blue));
-            /* Gradiente horizontal das cores da marca */
-            color: #000;                    /* Texto preto para contraste */
+            color: #000;
             padding: 16px 42px;
-            border-radius: 50px;            /* Bordas super arredondadas */
-            font-weight: 700;               /* Negrito */
-            text-decoration: none;          /* Remove sublinhado */
-            box-shadow: 0 0 20px rgba(34,197,94,.5); /* Brilho verde */
-            transition: .3s;                /* Transição suave de 300ms */
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(34,197,94,.5);
+            transition: .3s;
         }
-        
-        /* Efeito hover do botão - cresce 10% */
-        .cta a:hover { 
-            transform: scale(1.1); 
-        }
+        .cta a:hover { transform: scale(1.1); }
 
-        /* ===== SEÇÃO CRIADOR ===== */
         .creator {
             margin-top: 40px;
             text-align: center;
@@ -145,27 +117,21 @@
         .creator img {
             width: 220px;
             border-radius: 20px;
-            border: 4px solid var(--accent-green);  /* Borda verde */
-            box-shadow: 0 0 25px rgba(34,197,94,.5); /* Brilho verde */
+            border: 4px solid var(--accent-green);
+            box-shadow: 0 0 25px rgba(34,197,94,.5);
         }
-        .creator h3 { 
-            color: var(--accent-green); 
-            margin-top: 10px; 
-        }
-        .creator p { 
-            max-width: 600px; 
-            margin: 10px auto; /* Centraliza com largura máxima */
-        }
+        .creator h3 { color: var(--accent-green); margin-top: 10px; }
+        .creator p { max-width: 600px; margin: 10px auto; }
 
-        /* ===== SEÇÕES DE CONTEÚDO ===== */
+        /* ===== SEÇÕES ===== */
         .section {
-            max-width: 1100px;      /* Largura máxima do conteúdo */
-            margin: 40px auto;      /* Centraliza com margem superior/inferior */
-            padding: 80px 20px;     /* Espaçamento interno generoso */
-            background: rgba(0,0,0,.3);           /* Fundo semi-transparente */
-            backdrop-filter: blur(15px);          /* Efeito vidro fosco moderno */
-            border-radius: 20px;                  /* Cantos arredondados */
-            box-shadow: 0 0 25px rgba(56,189,248,.2); /* Sombra azul suave */
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 80px 20px;
+            background: rgba(0,0,0,.3);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(56,189,248,.2);
         }
 
         .section h2 {
@@ -175,95 +141,89 @@
             margin-bottom: 30px;
         }
 
-        /* ===== CARDS DO RANKING ===== */
+        /* ===== CARDS - ATUALIZADO 🔥 ===== */
         .card {
-            background: var(--glass);         /* Efeito vidro */
+            background: var(--glass);
             border-radius: 20px;
             padding: 30px;
-            margin: 0 auto 10px;              /* Centraliza e espaça cards */
+            margin: 0 auto 20px;
             max-width: 600px;
-            transition: .3s;                  /* Animação suave */
-            text-align: center;               /* Centraliza conteúdo do card */
+            transition: .3s;
+            text-align: center;
         }
-        
-        /* Efeito hover dos cards - flutua e brilha */
         .card:hover {
-            transform: translateY(-8px) scale(1.02); /* Sobe e cresce 2% */
-            box-shadow: 0 0 35px rgba(34,197,94,.7); /* Brilho verde intenso */
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 0 35px rgba(34,197,94,.7);
         }
 
-.card h3 {
-    color: var(--accent-green);
-    margin-bottom: 20px;
-    font-size: 26px;
-    white-space: nowrap;  /* ← ESTA LINHA É A MÁGICA */
-    text-align: center;   /* ← CENTRALIZA */
-}
+        /* 🔥 TÍTULOS EM 2 LINHAS (NOVO) */
+        .card h3 {
+            color: var(--accent-green);
+            margin-bottom: 8px;
+            font-size: 26px;
+            text-align: center;
+            line-height: 1.2;
+        }
 
+        /* Segunda linha do título - faixa etária */
+        .card h3 span {
+            display: block;           /* Nova linha */
+            font-size: 18px;
+            color: var(--accent-blue); /* Azul para destacar */
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        /* ÍCONE DO RANK */
+        .rank-icon {
+            width: 180px;
+            display: block;
+            margin: 0 auto 12px;
+            filter: drop-shadow(0 0 18px rgba(56,189,248,.12));
+        }
+
+        /* TEXTOS DOS JOGADORES */
         .card p {
             font-size: 18px;
-            margin: 2px 0;
-        }
-
-        /* ===== ÍCONES DOS RANKS ===== */
-        .rank-icon {
-            width: 180px;                     /* Tamanho dos ícones de rank */
-            display: block;
-            margin: 0 auto 4px;               /* Centraliza */
-            filter: drop-shadow(0 0 18px rgba(56,189,248,.12)); /* Sombra azul sutil */
+            margin: 0 0 6px 0;
         }
 
         /* ===== FOOTER ===== */
         footer {
             text-align: center;
             padding: 30px;
-            opacity: .8;                      /* Levemente transparente */
-            border-top: 1px solid rgba(255,255,255,.1); /* Linha divisória sutil */
+            opacity: .8;
+            border-top: 1px solid rgba(255,255,255,.1);
         }
 
-        /* ===== RESPONSIVIDADE MOBILE ===== */
+        /* MOBILE */
         @media (max-width: 768px) {
-            /* Ajustes para telas menores que 768px (tablets e celulares) */
-            header h1 { 
-                font-size: 38px;              /* Reduz tamanho do título */
-            }
-
-            .rank-icon {
-                width: 200px;                 /* Ícones maiores no mobile */
-            }
+            header h1 { font-size: 38px; }
+            .rank-icon { width: 200px; }
         }
     </style>
 </head>
 
 <body>
-    <!-- Vídeo de fundo - autoplay, sem som, loop infinito e otimizado para mobile -->
+    <!-- Vídeo de fundo otimizado -->
     <video id="background-video" autoplay muted loop playsinline>
-        <!-- playsinline é essencial para iPhone Safari -->
         <source src="assets/videomobile.mp4" type="video/mp4">
-        <!-- Arquivo MP4 otimizado para mobile no assets/ -->
     </video>
 
-    <!-- Container principal do conteúdo -->
     <div class="main-container">
 
-        <!-- ===== HEADER ===== -->
+        <!-- HEADER -->
         <header>
-            <!-- Logo principal com efeito flutuante -->
             <img src="assets/logo.png" alt="ETW Brasil">
-            <!-- alt é essencial para acessibilidade -->
-            
             <h1>ETW Brasil</h1>
             <p>Comunidade de Fãs de Eat the World</p>
 
-            <!-- Botão principal CTA -->
             <div class="cta">
                 <a href="https://www.roblox.com/share/g/263736733" target="_blank">
-                    <!-- target="_blank" abre em nova aba -->
                     🔰 Entrar na Comunidade
                 </a>
             </div>
 
-            <!-- Seção do criador da comunidade -->
             <div class="creator">
                 <img src="assets/mr-mondial.png" alt="Mr.Mondial">
                 <h3>Mr.Mondial</h3>
@@ -271,31 +231,40 @@
             </div>
         </header>
 
-        <!-- ===== SEÇÃO RANKING ===== -->
+        <!-- SEÇÃO RANKING - ATUALIZADA 🔥 -->
         <section class="section">
             <h2>🏆 Ranking Oficial da Comunidade</h2>
 
-            <!-- Card Global -->
+            <!-- 🔥 CARD GLOBAL - 2 LINHAS NO TÍTULO -->
             <div class="card">
-                <h3>🌌 Global (20M a 80M)</h3>
-                <img src="assets/global.png" class="rank-icon">
+                <h3>
+                    🌌 Global<br>
+                    <span>(20M a 80M)</span>
+                </h3>
+                <img src="assets/global.png" class="rank-icon" alt="Rank Global">
                 <p>🥇 Mr.Mondial — 22.400.000</p>
                 <p>🥈 Vaga em aberto</p>
                 <p>🥉 Vaga em aberto</p>
             </div>
 
-            <!-- Card Diamante -->
+            <!-- 🔥 CARD DIAMANTE - 2 LINHAS -->
             <div class="card">
-                <h3>💎 Diamante (10M a 19M)</h3>
-                <img src="assets/diamante.png" class="rank-icon">
+                <h3>
+                    💎 Diamante<br>
+                    <span>(10M a 19M)</span>
+                </h3>
+                <img src="assets/diamante.png" class="rank-icon" alt="Rank Diamante">
                 <p>AURA — 13.000.000</p>
                 <p>MRGORDOZIKA — 12.000.000</p>
             </div>
 
-            <!-- Card Ouro (mais jogadores) -->
+            <!-- 🔥 CARD OURO - 2 LINHAS -->
             <div class="card">
-                <h3>🔰 Ouro (1M a 9M)</h3>
-                <img src="assets/ouro.png" class="rank-icon">
+                <h3>
+                    🔰 Ouro<br>
+                    <span>(1M a 9M)</span>
+                </h3>
+                <img src="assets/ouro.png" class="rank-icon" alt="Rank Ouro">
                 <p>MEGAPOOP — 6.800.000</p>
                 <p>Rashford — 5.000.000</p>
                 <p>PrincesaPerola95 — 5.008.600</p>
@@ -306,27 +275,33 @@
                 <p>Lord_Samurayy — 1.400.000</p>
             </div>
 
-            <!-- Card Prata -->
+            <!-- 🔥 CARD PRATA - 2 LINHAS -->
             <div class="card">
-                <h3>🥈 Prata (100K a 900K)</h3>
-                <img src="assets/prata.png" class="rank-icon">
+                <h3>
+                    🥈 Prata<br>
+                    <span>(100K a 900K)</span>
+                </h3>
+                <img src="assets/prata.png" class="rank-icon" alt="Rank Prata">
                 <p>Magoado77 — 620.000</p>
                 <p>POOOP — 505.000</p>
                 <p>ANNA — 148.000</p>
             </div>
 
-            <!-- Card Bronze -->
+            <!-- 🔥 CARD BRONZE - 2 LINHAS -->
             <div class="card">
-                <h3>🥉 Bronze (10K a 100K)</h3>
-                <img src="assets/bronze.png" class="rank-icon">
+                <h3>
+                    🥉 Bronze<br>
+                    <span>(10K a 100K)</span>
+                </h3>
+                <img src="assets/bronze.png" class="rank-icon" alt="Rank Bronze">
                 <p>RAFALEGAMES205 — 86.100</p>
                 <p>H_H — 34.000</p>
                 <p>Danttas — 21.000</p>
                 <p>il0l0li — 17.100</p>
             </div>
+
         </section>
 
-        <!-- Footer simples -->
         <footer>© ETW Brasil • Comunidade de Fãs</footer>
     </div>
 </body>
